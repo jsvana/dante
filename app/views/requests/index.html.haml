@@ -1,0 +1,52 @@
+= content_for :page_header do
+  %h1
+    Requests
+    = link_to 'New Request', dashboards_path, class: 'btn btn-primary pull-right'
+
+.container
+  .row
+    .span1
+      .btn-group.btn-group-vertical{ data: { toggle: "buttons-radio" }}
+        %a.btn.btn-large.btn-primary.active Music
+        %a.btn.btn-large.btn-info Movies
+        %a.btn.btn-large.btn-success TV Shows
+        %a.btn.btn-large.btn-warning Software
+        %a.btn.btn-large.btn-danger Games
+        %a.btn.btn-large.btn-inverse Other
+    .span9.offset1.well
+      .requests#music
+        - if @music.present?
+          - @music.each_with_index do |req, i|
+            %p= "#{i + 1}. #{req.album} by #{req.artist}"
+        - else
+          %p No music requests, yet.
+      .requests#movies
+        - if @movies.present?
+          - @movies.each_with_index do |req, i|
+            %p= "#{i + 1}. #{req.title}"
+        - else
+          %p No movie requests, yet.
+      .requests#tv-shows
+        - if @tv_shows.present?
+          - @tv_shows.each_with_index do |req, i|
+            %p= "#{i + 1}. #{req.title}"
+        - else
+          %p No TV show requests, yet.
+      .requests#software
+        - if @software.present?
+          - @software.each_with_index do |req, i|
+            %p= "#{i + 1}. #{req.title}"
+        - else
+          %p No software requests, yet.
+      .requests#games
+        - if @games.present?
+          - @games.each_with_index do |req, i|
+            %p= "#{i + 1}. #{req.title}"
+        - else
+          %p No game requests, yet.
+      .requests#other
+        - if @other.present?
+          - @other.each_with_index do |req, i|
+            %p= "#{i + 1}. #{req.title}"
+        - else
+          %p No other requests, yet.

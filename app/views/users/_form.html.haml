@@ -1,0 +1,12 @@
+= simple_form_for @user do |form|
+
+  = form.input :username
+  = form.input :password
+  = form.input :password_confirmation
+
+  .form-actions
+    = form.submit 'Save', class: 'btn btn-primary'
+    - if @user.new_record?
+      = link_to 'Cancel', users_path
+    - else
+      = link_to 'Cancel', @user

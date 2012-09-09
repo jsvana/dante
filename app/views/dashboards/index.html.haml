@@ -1,0 +1,85 @@
+= content_for :page_header do
+  %h1
+    New Request
+    = link_to 'Back', requests_path, class: 'btn btn-primary pull-right'
+
+.row{ style: 'text-align:center' }
+  .span2
+    = link_to 'Music', '#', id: 'new-music', class: 'new-request btn btn-large btn-primary'
+  .span2
+    = link_to 'Movies', '#', id: 'new-movies', class: 'new-request btn btn-large btn-info'
+  .span2
+    = link_to 'TV Shows', '#', id: 'new-tv-shows', class: 'new-request btn btn-large btn-success'
+  .span2
+    = link_to 'Software', '#', id: 'new-software', class: 'new-request btn btn-large btn-warning'
+  .span2
+    = link_to 'Games', '#', id: 'new-games', class: 'new-request btn btn-large btn-danger'
+  .span2
+    = link_to 'Other', '#', id: 'new-other', class: 'new-request btn btn-large btn-inverse'
+
+.alert.alert-success#request-alert{ style: 'margin-top:20px' }
+  %a.close{ href: '#', data: { dismiss: 'alert' }} &times;
+  %p Your request has been submitted!
+
+.row.request-well#new-music-request
+  .span12
+    .container.well
+      = form_for @request, remote: true do |f|
+        = hidden_field_tag 'request[request_type]', 'music'
+        .input-prepend
+          %span.add-on Artist
+          = f.text_field 'artist', class: 'input-xxlarge'
+        .input-prepend
+          %span.add-on Album
+          = f.text_field 'album', class: 'input-xxlarge'
+        = f.submit 'Request', class: 'request-submit btn btn-primary'
+
+.row.request-well#new-movies-request
+  .span12
+    .container.well
+      = form_for @request, remote: true do |f|
+        = hidden_field_tag 'request[request_type]', 'movies'
+        .input-prepend
+          %span.add-on Title
+          = f.text_field 'title', class: 'input-xxlarge'
+        = f.submit 'Request', class: 'request-submit btn btn-primary'
+
+.row.request-well#new-tv-shows-request
+  .span12
+    .container.well
+      = form_for @request, remote: true do |f|
+        = hidden_field_tag 'request[request_type]', 'tv-shows'
+        .input-prepend
+          %span.add-on Title
+          = f.text_field 'title', class: 'input-xxlarge'
+        = f.submit 'Request', class: 'request-submit btn btn-primary'
+
+.row.request-well#new-software-request
+  .span12
+    .container.well
+      = form_for @request, remote: true do |f|
+        = hidden_field_tag 'request[request_type]', 'software'
+        .input-prepend
+          %span.add-on Name
+          = f.text_field 'title', class: 'input-xxlarge'
+        = f.submit 'Request', class: 'request-submit btn btn-primary'
+
+.row.request-well#new-games-request
+  .span12
+    .container.well
+      = form_for @request, remote: true do |f|
+        = hidden_field_tag 'request[request_type]', 'games'
+        .input-prepend
+          %span.add-on Name
+          = f.text_field 'title', class: 'input-xxlarge'
+        = f.submit 'Request', class: 'request-submit btn btn-primary'
+
+.row.request-well#new-other-request
+  .span12
+    .container.well
+      = form_for @request, remote: true do |f|
+        = hidden_field_tag 'request[request_type]', 'other'
+        .input-prepend
+          %span.add-on Name
+          = f.text_field 'title', class: 'input-xxlarge'
+        = f.submit 'Request', class: 'request-submit btn btn-primary'

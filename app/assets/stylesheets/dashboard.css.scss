@@ -1,0 +1,14 @@
+#new-music-request, #new-movies-request, #new-tv-shows-request,
+  #new-software-request, #new-games-request, #new-other-request {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#request-alert {
+  display: none;
+}
+
+.requests {
+  display: none;
+}
