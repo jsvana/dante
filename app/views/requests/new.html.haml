@@ -3,6 +3,9 @@
     New Request
     = link_to 'Back', requests_path, class: 'btn btn-primary pull-right'
 
+%script
+  window.tmdb_key = 'b49feb9f1a3a23e2b4fcc2488d25aeb5'
+  window.tvdb_key = 'C7DF018402742272'
 .row{ style: 'text-align:center' }
   .span2
     = link_to 'Music', '#', id: 'new-music', class: 'new-request btn btn-large btn-primary'
@@ -28,10 +31,10 @@
         = hidden_field_tag 'request[request_type]', 'music'
         .input-prepend
           %span.add-on Artist
-          = f.text_field 'artist', class: 'input-xxlarge'
+          = text_field_tag 'request[artist]', '', class: 'input-xxlarge', id: 'music-artist'
         .input-prepend
           %span.add-on Album
-          = f.text_field 'album', class: 'input-xxlarge'
+          = text_field_tag 'request[album]', '', class: 'input-xxlarge', id: 'music-album'
         = f.submit 'Request', class: 'request-submit btn btn-primary'
 
 .row.request-well#new-movies-request
@@ -41,7 +44,7 @@
         = hidden_field_tag 'request[request_type]', 'movies'
         .input-prepend
           %span.add-on Title
-          = f.text_field 'title', class: 'input-xxlarge'
+          = text_field_tag 'request[title]', '', class: 'input-xxlarge', id: 'movies-title'
         = f.submit 'Request', class: 'request-submit btn btn-primary'
 
 .row.request-well#new-tv-shows-request
@@ -51,7 +54,7 @@
         = hidden_field_tag 'request[request_type]', 'tv-shows'
         .input-prepend
           %span.add-on Title
-          = f.text_field 'title', class: 'input-xxlarge'
+          = text_field_tag 'request[title]', '', class: 'input-xxlarge', id: 'tv-shows-title'
         = f.submit 'Request', class: 'request-submit btn btn-primary'
 
 .row.request-well#new-software-request
@@ -61,7 +64,7 @@
         = hidden_field_tag 'request[request_type]', 'software'
         .input-prepend
           %span.add-on Name
-          = f.text_field 'title', class: 'input-xxlarge'
+          = text_field_tag 'request[title]', '', class: 'input-xxlarge', id: 'software-title'
         = f.submit 'Request', class: 'request-submit btn btn-primary'
 
 .row.request-well#new-games-request
@@ -71,7 +74,7 @@
         = hidden_field_tag 'request[request_type]', 'games'
         .input-prepend
           %span.add-on Name
-          = f.text_field 'title', class: 'input-xxlarge'
+          = text_field_tag 'request[title]', '', class: 'input-xxlarge', id: 'games-title'
         = f.submit 'Request', class: 'request-submit btn btn-primary'
 
 .row.request-well#new-other-request
@@ -81,5 +84,5 @@
         = hidden_field_tag 'request[request_type]', 'other'
         .input-prepend
           %span.add-on Name
-          = f.text_field 'title', class: 'input-xxlarge'
+          = text_field_tag 'request[title]', '', class: 'input-xxlarge', id: 'other-title'
         = f.submit 'Request', class: 'request-submit btn btn-primary'

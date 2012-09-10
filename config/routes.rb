@@ -1,7 +1,11 @@
 Dante::Application.routes.draw do
-  root to: 'dashboards#index'
+  root to: 'requests#index'
 
   resources :users
-  resources :dashboards
-  resources :requests
+  resources :requests do
+    member do
+      post :upvote
+      post :downvote
+    end
+  end
 end

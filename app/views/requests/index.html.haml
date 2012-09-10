@@ -1,7 +1,7 @@
 = content_for :page_header do
   %h1
     Requests
-    = link_to 'New Request', dashboards_path, class: 'btn btn-primary pull-right'
+    = link_to 'New Request', new_request_path, class: 'btn btn-primary pull-right'
 
 .container
   .row
@@ -13,40 +13,54 @@
         %a.btn.btn-large.btn-warning Software
         %a.btn.btn-large.btn-danger Games
         %a.btn.btn-large.btn-inverse Other
-    .span9.offset1.well
+    .span9.offset1
       .requests#music
-        - if @music.present?
-          - @music.each_with_index do |req, i|
-            %p= "#{i + 1}. #{req.album} by #{req.artist}"
-        - else
-          %p No music requests, yet.
+        %h3 Music Requests
+        .request-content
+        / - if @music.present?
+        /   - @music.each_with_index do |req, i|
+        /     %p= "#{i + 1}. #{req.album} by #{req.artist}"
+        /     - if i != @music.length - 1
+        /       %hr
+        / - else
+        /   %p No music requests, yet.
       .requests#movies
-        - if @movies.present?
-          - @movies.each_with_index do |req, i|
-            %p= "#{i + 1}. #{req.title}"
-        - else
-          %p No movie requests, yet.
+        %h3 Movie Requests
+        .request-content
+        / - if @movies.present?
+        /   - @movies.each_with_index do |req, i|
+        /     %p= "#{i + 1}. #{req.title}"
+        / - else
+        /   %p No movie requests, yet.
       .requests#tv-shows
-        - if @tv_shows.present?
-          - @tv_shows.each_with_index do |req, i|
-            %p= "#{i + 1}. #{req.title}"
-        - else
-          %p No TV show requests, yet.
+        %h3 TV Show Requests
+        .request-content
+        / - if @tv_shows.present?
+        /   - @tv_shows.each_with_index do |req, i|
+        /     %p= "#{i + 1}. #{req.title}"
+        / - else
+        /   %p No TV show requests, yet.
       .requests#software
-        - if @software.present?
-          - @software.each_with_index do |req, i|
-            %p= "#{i + 1}. #{req.title}"
-        - else
-          %p No software requests, yet.
+        %h3 Software Requests
+        .request-content
+        / - if @software.present?
+        /   - @software.each_with_index do |req, i|
+        /     %p= "#{i + 1}. #{req.title}"
+        / - else
+        /   %p No software requests, yet.
       .requests#games
-        - if @games.present?
-          - @games.each_with_index do |req, i|
-            %p= "#{i + 1}. #{req.title}"
-        - else
-          %p No game requests, yet.
+        %h3 Game Requests
+        .request-content
+        / - if @games.present?
+        /   - @games.each_with_index do |req, i|
+        /     %p= "#{i + 1}. #{req.title}"
+        / - else
+        /   %p No game requests, yet.
       .requests#other
-        - if @other.present?
-          - @other.each_with_index do |req, i|
-            %p= "#{i + 1}. #{req.title}"
-        - else
-          %p No other requests, yet.
+        %h3 Other Requests
+        .request-content
+        / - if @other.present?
+        /   - @other.each_with_index do |req, i|
+        /     %p= "#{i + 1}. #{req.title}"
+        / - else
+        /   %p No other requests, yet.
