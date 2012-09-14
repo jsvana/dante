@@ -17,50 +17,18 @@
       .requests#music
         %h3 Music Requests
         .request-content
-        / - if @music.present?
-        /   - @music.each_with_index do |req, i|
-        /     %p= "#{i + 1}. #{req.album} by #{req.artist}"
-        /     - if i != @music.length - 1
-        /       %hr
-        / - else
-        /   %p No music requests, yet.
       .requests#movies
         %h3 Movie Requests
         .request-content
-        / - if @movies.present?
-        /   - @movies.each_with_index do |req, i|
-        /     %p= "#{i + 1}. #{req.title}"
-        / - else
-        /   %p No movie requests, yet.
       .requests#tv-shows
         %h3 TV Show Requests
         .request-content
-        / - if @tv_shows.present?
-        /   - @tv_shows.each_with_index do |req, i|
-        /     %p= "#{i + 1}. #{req.title}"
-        / - else
-        /   %p No TV show requests, yet.
       .requests#software
         %h3 Software Requests
         .request-content
-        / - if @software.present?
-        /   - @software.each_with_index do |req, i|
-        /     %p= "#{i + 1}. #{req.title}"
-        / - else
-        /   %p No software requests, yet.
       .requests#games
         %h3 Game Requests
         .request-content
-        / - if @games.present?
-        /   - @games.each_with_index do |req, i|
-        /     %p= "#{i + 1}. #{req.title}"
-        / - else
-        /   %p No game requests, yet.
       .requests#other
         %h3 Other Requests
         .request-content
-        / - if @other.present?
-        /   - @other.each_with_index do |req, i|
-        /     %p= "#{i + 1}. #{req.title}"
-        / - else
-        /   %p No other requests, yet.

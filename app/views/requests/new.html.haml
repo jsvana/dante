@@ -26,7 +26,7 @@
 
 .row.request-well#new-music-request
   .span12
-    .container.well
+    .container.well.blue
       = form_for @request, remote: true do |f|
         = hidden_field_tag 'request[request_type]', 'music'
         .input-prepend
@@ -39,7 +39,7 @@
 
 .row.request-well#new-movies-request
   .span12
-    .container.well
+    .container.well.light-blue
       = form_for @request, remote: true do |f|
         = hidden_field_tag 'request[request_type]', 'movies'
         .input-prepend
@@ -49,7 +49,7 @@
 
 .row.request-well#new-tv-shows-request
   .span12
-    .container.well
+    .container.well.green
       = form_for @request, remote: true do |f|
         = hidden_field_tag 'request[request_type]', 'tv-shows'
         .input-prepend
@@ -59,7 +59,7 @@
 
 .row.request-well#new-software-request
   .span12
-    .container.well
+    .container.well.orange
       = form_for @request, remote: true do |f|
         = hidden_field_tag 'request[request_type]', 'software'
         .input-prepend
@@ -69,7 +69,7 @@
 
 .row.request-well#new-games-request
   .span12
-    .container.well
+    .container.well.red
       = form_for @request, remote: true do |f|
         = hidden_field_tag 'request[request_type]', 'games'
         .input-prepend
@@ -79,7 +79,7 @@
 
 .row.request-well#new-other-request
   .span12
-    .container.well
+    .container.well.black
       = form_for @request, remote: true do |f|
         = hidden_field_tag 'request[request_type]', 'other'
         .input-prepend

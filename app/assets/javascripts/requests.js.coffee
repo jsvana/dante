@@ -9,6 +9,7 @@ class Requests
       @data['software'] = data[3]
       @data['games'] = data[4]
       @data['other'] = data[5]
+      @.render()
 
   setType: (type) ->
     @type = type
@@ -50,13 +51,22 @@ class Requests
     html = ''
 
     for i in [0..content.length - 1]
-      html += '<div><span data-index="' + i + '" data-id="' + content[i]['id'] + '">' + content[i]['title'] + '&nbsp;</span>'
-      html += '<a href="#" class="upvote"><span>&#x25B2;</span></a>'
-      html += '<span class="vote">(' + content[i]['vote'] + ')</span>'
-      html += '<a href="#" class="downvote"><span>&#x25BC;</span></a>'
-      if i != content.length - 1
-        html += '<hr>'
-      html += '</div>'
+      if @type == 'music'
+        html += '<div><span data-index="' + i + '" data-id="' + content[i]['id'] + '">' + content[i]['album'] + ' by ' + content[i]['artist'] + '&nbsp;</span>'
+        html += '<a href="#" class="upvote"><span>&#x25B2;</span></a>'
+        html += '<span class="vote">(' + content[i]['vote'] + ')</span>'
+        html += '<a href="#" class="downvote"><span>&#x25BC;</span></a>'
+        if i != content.length - 1
+          html += '<hr>'
+        html += '</div>'
+      else
+        html += '<div><span data-index="' + i + '" data-id="' + content[i]['id'] + '">' + content[i]['title'] + '&nbsp;</span>'
+        html += '<a href="#" class="upvote"><span>&#x25B2;</span></a>'
+        html += '<span class="vote">(' + content[i]['vote'] + ')</span>'
+        html += '<a href="#" class="downvote"><span>&#x25BC;</span></a>'
+        if i != content.length - 1
+          html += '<hr>'
+        html += '</div>'
 
     $("##{@type} .request-content").html html
 
